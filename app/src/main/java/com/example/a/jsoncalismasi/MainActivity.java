@@ -2,16 +2,20 @@ package com.example.a.jsoncalismasi;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
 
 
     @Override
@@ -19,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView)findViewById(R.id.textView);
+        textView = (TextView)findViewById(R.id.textView);
 
         StringBuilder stringBuilder = new StringBuilder();
         InputStream is = getResources().openRawResource(R.raw.json_verisi);
@@ -48,5 +52,18 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         textView.setText(stringBuilder);
+    }
+
+    public void btnClic(View view) { //Burada tuona tıklandığında dosya okuyor
+        //File file = new File("/home/a/AndroidStudioProjects/JsonCalismasi/app/src/main/res/raw/json_verisi");//Bu hatalı
+        InputStream is = getResources().openRawResource(R.raw.json_verisi);
+        Scanner scanner = new Scanner(is);
+        String str = "";
+        while (scanner.hasNextLine()) {
+            str = str + scanner.nextLine() + "\n";
+        }
+        textView.setText(str);
+
+
     }
 }
