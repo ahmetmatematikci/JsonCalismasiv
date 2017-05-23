@@ -1,0 +1,31 @@
+{
+    "personel_veritabani":
+    [
+    {
+
+            "id" : "001",
+            "adi" : "Levent",
+            "soyadi": "Yadırga",
+            "gorevi": "Öğretmen"
+
+    },
+      {
+
+                "id" : "002",
+                "adi" : "samet",
+                "soyadi": "Yadırga",
+                "gorevi": "öğrenci"
+
+        },
+
+          {
+
+                    "id" : "003",
+                    "adi" : "as",
+                    "soyadi": "Yadırasga",
+                    "gorevi": "Muhasebe"
+
+            }
+
+    ]
+}
